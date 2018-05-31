@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Intel homepage</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<script src="jq/jquery-3.2.1.js"></script>
+
+<style>
+.pdf{
+	width: 100px;
+	border:1px solid black;
+	background-color: black;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+h3,img{
+	margin-bottom: 10px;
+
+}
+.rot{
+/*animation: rotate 2s linear;*/
+animation: run 1s ease-out infinite;
+}
+
+
+
+@keyframes rotate {
+  0% 
+  {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes run{
+0%{
+transform:rotate(0deg);
+}
+/*50%{
+transform:rotate(200deg);
+}*/
+100%{
+transform:rotate(360deg);	
+}
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="pdf">
+	<h3>飞镖</h3>
+	<img src="img/biao.jpg" alt="">
+</div>
+
+</body>
+<script>
+$("div").mouseover(function(){
+	$("img").addClass("rot");
+})
+
+
+$("div").mouseleave(function(){
+	setTimeout(
+	'$("img").removeClass("rot")',1000
+	)
+
+})
+</script>
+
+</html>
