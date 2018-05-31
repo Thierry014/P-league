@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+
+
+
+
+<style>
+.tables{
+
+width: 1000px;
+height: 1000px;
+text-align: center;
+/* position: relative; */
+
+}
+
+.table td{
+	width: 300px;
+	height: 250px;
+}
+
+#result{
+	color: red;
+}
+</style>
+
+
+
+<script language="javascript" type="text/javascript">
+
+	var win=0;
+	var lose=0;
+	var tie=0;
+	var time=0;
+	var gameon=0;//主要看是不是玩家在这次游戏中
+	var comppic;
+
+
+function show(){
+	// if (gameon==1) {
+	// 	alert("please click try again");
+	// 	return;
+	// } 
+
+
+
+
+	var mychoice=parseInt($("choice").value); //获取用户的选择是石头(0)布(1)剪刀(2)
+	window.alert("time="+time);
+	time++;
+
+
+
+
+	
+	var comp= Math.round(Math.random()*2);
+	alert("电脑的"+comp);
+	//通过生成0-2的随机数来判断电脑的选择
+	switch(comp){
+		case 0:
+		pcrock();
+		break;
+
+		case 1:
+		pcpaper();
+		break;
+
+		case 2:
+		pcsis();
+		break;
+	}
+
+
+    
+	//判断并且在"你的选择区域"放上对应的图片
+	switch(mychoice){
+		case 0:
+		showrock();
+		break;
+
+		case 1:
+		showpaper();
+		break;
+
+		case 2:
+		showsis();
+		break;
+	}
+
+
+	if(mychoice==0){
+		if(comp==0){
+			alert("tie");
+			$("result").innerText="tie";
+			tie++;
+			$("board").innerText="场次:"+time+" "+"胜场:"+win+" "+"负场:"+lose+" "+"平局:"+tie;
+
+
+		}
+		else if (comp==1) {
+			alert("you lose");
+			$("result").innerText="you lose";
+			lose++;
+			$("board").innerText="场次:"+time+" "+"胜场:"+win+" "+"负场:"+lose+" "+"平局:"+tie;
+
+		} else {alert("you win");
+	     $("result").innerText="you win";
+	      win++;
+	  $("board").innerText="场次:"+time+" "+"胜场:"+win+" "+"负场:"+lose+" "+"平局:"+tie;}
+
+	}
+
+	
+	// else if (mychoice==1) {} 
+	// else {}
+   
+   // gameon++;
+}
+
+function reset(){
+	//清除所有的图片元素
+	alert("666");
+
+
+    var obj = document.getElementById("mypic");
+　　var impParent = obj.parentNode;//获取img的父对象
+　　impParent.removeChild(obj);//通过img的父对象把它删除
+
+//     var obj = document.getElementById("player");
+// 　　var impParent = obj.parentNode;//获取img的父对象
+// 　　impParent.removeChild(obj);//通过img的父对象把它删除
+
+
+//     var obj = document.getElementById("comp");
+// 　　var impParent = obj.parentNode;//获取img的父对象
+// 　　impParent.removeChild(obj);//通过img的父对象把它删除
+
+
+ // gameon=0;
+
+}
+
+
+
+function showrock(){
+	var bigImg = document.createElement("img");     //创建一个img元素  
+    bigImg.src="0.png";   //给img元素的src属性赋值  
+    var myDiv = document.getElementById('mypic'); //获得dom对象  
+    myDiv.appendChild(bigImg);      //为dom添加子元素img  
+
+    var smallImg = document.createElement("img");     //创建一个img元素  
+    smallImg.src="0.png";   //给img元素的src属性赋值  
+    var topPic = document.getElementById('player'); //获得dom对象  
+    topPic.appendChild(smallImg);
+}
+
+function showpaper(){
+	var bigImg = document.createElement("img");     //创建一个img元素  
+    bigImg.src="1.png";   //给img元素的src属性赋值  
+    var myDiv = document.getElementById('mypic'); //获得dom对象  
+    myDiv.appendChild(bigImg);      //为dom添加子元素img  
+
+    var smallImg = document.createElement("img");     //创建一个img元素  
+    smallImg.src="1.png";   //给img元素的src属性赋值  
+    var topPic = document.getElementById('player'); //获得dom对象  
+    topPic.appendChild(smallImg);
+}
+
+function showsis(){
+	var bigImg = document.createElement("img");     //创建一个img元素  
+    bigImg.src="2.png";   //给img元素的src属性赋值  
+    var myDiv = document.getElementById('mypic'); //获得dom对象  
+    myDiv.appendChild(bigImg);      //为dom添加子元素img  
+
+    var smallImg = document.createElement("img");     //创建一个img元素  
+    smallImg.src="2.png";   //给img元素的src属性赋值  
+    var topPic = document.getElementById('player'); //获得dom对象  
+    topPic.appendChild(smallImg);
+}
+
+
+function pcrock(){
+	var bigImg = document.createElement("img");     //创建一个img元素  
+    bigImg.src="0.png";   //给img元素的src属性赋值  
+    var myDiv = document.getElementById('comp'); //获得dom对象  
+    myDiv.appendChild(bigImg);      //为dom添加子元素img  
+
+    comppic=myDiv.appendChild(bigImg);
+}
+
+function pcpaper(){
+	var bigImg = document.createElement("img");     //创建一个img元素  
+    bigImg.src="1.png";   //给img元素的src属性赋值  
+    var myDiv = document.getElementById('comp'); //获得dom对象  
+    myDiv.appendChild(bigImg);      //为dom添加子元素img  
+}
+
+function pcsis(){
+	var bigImg = document.createElement("img");     //创建一个img元素  
+    bigImg.src="2.png";   //给img元素的src属性赋值  
+    var myDiv = document.getElementById('comp'); //获得dom对象  
+    myDiv.appendChild(bigImg);      //为dom添加子元素img  
+}
+
+
+function $(id){
+	return document.getElementById(id);
+}
+function reload(){
+	alert(333);
+	 window.location.reload();
+}
+
+</script>
+
+
+
+</head>
+
+
+<body>
+    <div>
+	<table class="tables" border=1;>
+		<tr><td>你<br/>
+			<div id="player" border=1 style="width: 265 height:290"></div>
+		</td><td>VS</td>
+		<td>电脑<br/>
+            <div id="comp" border=1 style="width: 265 height:290"></div>
+		</td></tr>
+		<tr><td colspan="3" id="result">显示结果</td></tr>
+		<tr><td>你选择了<br/>
+			<div id="mypic" border=1 style="width: 265 height:290">
+				
+			</div>
+
+		</td><td>Choice</td><td>请选择出? 
+			<select id="choice">
+              <option selected value="0">Rock
+              <option value="1">Paper
+              <option value="2">Scissor
+            </select>
+            <br/>
+            <input style="width: 200px;" type="button" name="" value="Click me!!!" onclick=show()>
+            <br/>
+            <input style="width: 200px;"" type="button"  value="Try again" onclick=window.location.reload()>
+
+          </td></tr>
+		<tr><td colspan="3" id="board">leader board + time</td></tr>
+	</table>
+</div>
+</body>
+</html>

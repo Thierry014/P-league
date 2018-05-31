@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>sohu切换</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+
+
+<style type="text/css">
+	
+*{
+	margin: 0;
+}
+
+.banner{
+	/*display: inline-block;*/
+	float: left;
+	/*margin-left: 200px;*/
+}
+
+.banner ul{
+	width: 10px;
+	list-style: none;
+	margin-right: 15px;
+}
+
+.banner ul li{
+	border: solid 1px black;
+	width: 15px;
+	margin-bottom: 7px;
+}
+
+.banner ul li:hover{
+	background-color: yellow;
+}
+
+.cate {
+	float: left;
+}
+
+
+.soccer{float: left;}
+</style>
+
+<script type="text/javascript">
+	function change(val){
+
+		var soccer = $("s1");
+		var bas = $("s2");
+		var vol = $("s3");
+
+		switch(val){
+			case 1:
+			s1.style.display = "block";
+			s2.style.display = "none";
+			s3.style.display = "none";
+			break;
+
+			case 2:
+			s1.style.display = "none";
+			s2.style.display = "block";
+			s3.style.display = "none";
+			break;
+
+			case 3:
+			s1.style.display = "none";
+			s2.style.display = "none";
+			s3.style.display = "block";
+			break;
+
+		}
+
+
+	}
+
+function $(id){
+	return document.getElementById(id);
+}
+
+
+</script>
+
+
+<body>
+    
+    <div class="banner">
+    <div class="cate">
+    	<ul>
+    		<li onmouseover="change(1)">足球</li>
+    		<li onmouseover="change(2)"">篮球</li>
+    		<li onmouseover="change(3)"">排球</li>
+    		
+    	</ul>
+    </div>
+
+    	<div class="soccer" id="s1">
+    		<a href="#">亨利大帝进球</a><br/>
+    		<a href="#">C罗金球冠军</a><br/>
+    		<a href="#">梅西卫冕欧冠</a><br/>
+    		<a href="#">切尔西换帅</a><br/>
+    		<a href="#">温格转会巴黎</a><br/>
+    		<a href="#">内马尔卡瓦尼</a><br/>
+    		<a href="#">吉鲁破穆鸟大巴</a><br/>
+    	</div>
+
+    	<div class="soccer" id="s2" style="display: none">
+    		<a href="#">阿联微微一笑</a><br/>
+    		<a href="#">阿联微微一笑</a><br/>
+    		<a href="#">阿联微微一笑</a><br/>
+    		<a href="#">阿联微微一笑</a><br/>
+    		<a href="#">温格转会巴黎</a><br/>
+    		<a href="#">内马尔卡瓦尼</a><br/>
+    		<a href="#">吉鲁破穆鸟大巴</a><br/>
+    	</div>
+
+    	<div class="soccer" id="s3" style="display: none">
+    		<a href="#">郎平指教中国</a><br/>
+    		<a href="#">郎平指教中国</a><br/>
+    		<a href="#">郎平指教中国</a><br/>
+    		<a href="#">切尔西换帅</a><br/>
+    		<a href="#">温格转会巴黎</a><br/>
+    		<a href="#">内马尔卡瓦尼</a><br/>
+    		<a href="#">吉鲁破穆鸟大巴</a><br/>
+    	</div>
+    </div>
+
+</body>
+</html>

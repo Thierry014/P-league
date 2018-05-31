@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>sword game</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+
+<style>
+body{
+	margin: 0;
+}
+
+ul{
+width: 1000px;
+margin: 0 auto;
+padding: 0;
+}
+
+.banner li{
+	/*display: inline-block;*/
+
+	float: left;
+	list-style: none;
+	margin-left: -6px;
+}
+
+</style>
+
+
+<body>
+    
+<ul class="banner">
+	<li id="li1" name="li" style="display: none"onmouseover="change(1)"><img src="img/10.png"></li>
+	<li id="cont1" name="cont"><img src="img/1.png" id="cont1"></li>
+
+	<li id="li2" name="li" onmouseover="change(2)"><img src="img/11.png"></li>
+	<li id="cont2" name="cont" style="display: none"><img src="img/2.png" id="cont1"></li>
+
+	<li id="li3" name="li" onmouseover="change(3)"><img src="img/12.png"></li>
+	<li id="cont3" name="cont" style="display: none"><img src="img/3.png" id="cont1"></li>
+
+	<li id="li4" name="li" onmouseover="change(4)"><img src="img/13.png"></li>
+	<li id="cont4" name="cont" style="display: none"><img src="img/4.png" id="cont1"></li>
+
+	<li id="li5" name="li" onmouseover="change(5)"><img src="img/14.png"></li>
+	<li id="cont5" name="cont" style="display: none"><img src="img/5.png" id="cont1"></li>
+
+	<li id="li6" name="li" onmouseover="change(6)"><img src="img/15.png"></li>
+	<li id="cont6" name="cont" style="display: none"><img src="img/6.png" id="cont1"></li>
+
+	
+</ul>
+
+<script type="text/javascript">
+	var li1 = $("li1");
+	var cont1= $("cont1");
+	var li1 = $("li1");
+	var cont1= $("cont1");
+	var ali = document.getElementsByName("li");
+	var acont = document.getElementsByName("cont");
+
+function change(val){
+
+	// alert(acont.length);
+
+	switch(val){
+	
+	case 1:
+	
+
+	for (var i = 0; i < acont.length; i++) {
+		acont[i].style.display="none";
+		ali[i].style.display="block";
+		}
+    li1.style.display="none";
+	cont1.style.display="block";
+//选中第一个list元素时候  第一个职业的li隐藏,cont显示
+//其他职业只显示li不显示cont
+	
+	break;
+
+
+	case 2:
+
+
+
+	for (var i = 0; i < acont.length; i++) {
+		acont[i].style.display="none";
+		ali[i].style.display="block";
+		}
+    li2.style.display="none";
+	cont2.style.display="block";
+	break;
+    
+
+    case 3:
+
+	for (var i = 0; i < acont.length; i++) {
+		acont[i].style.display="none";
+		ali[i].style.display="block";
+		}
+
+
+    li3.style.display="none";
+	cont3.style.display="block";
+	break;
+
+	case 4:
+
+	for (var i = 0; i < acont.length; i++) {
+		acont[i].style.display="none";
+		ali[i].style.display="block";
+		}
+
+
+    li4.style.display="none";
+	cont4.style.display="block";
+	break;
+
+
+	case 5:
+
+	for (var i = 0; i < acont.length; i++) {
+		acont[i].style.display="none";
+		ali[i].style.display="block";
+		}
+
+
+    li5.style.display="none";
+	cont5.style.display="block";
+	break;
+
+
+	case 6:
+
+	for (var i = 0; i < acont.length; i++) {
+		acont[i].style.display="none";
+		ali[i].style.display="block";
+		}
+
+
+    li6.style.display="none";
+	cont6.style.display="block";
+	break;
+    }
+
+}
+
+
+function $(id){
+	return document.getElementById(id);
+}	
+
+
+
+</script>
+</body>
+</html>

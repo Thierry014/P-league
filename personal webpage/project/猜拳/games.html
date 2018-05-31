@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>面相对象做猜拳游戏</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+<style>
+*{margin: 0 auto}
+
+img{
+	width: 100px;
+	height: 100px;
+}
+
+.tables{
+	width: 100%;
+	height: 600px;
+	text-align: center;
+}
+
+#mypic{
+	position: relative;
+	/* clear: both; */
+	height: 100px;
+}
+
+#mypic img {
+	position: absolute;
+	left: 30px;
+
+}
+
+#player{
+	position: relative;
+	clear: both;
+	height: 100px;
+}
+
+#player img {
+	position: absolute;
+	left: 30px;
+
+}
+
+#comp{
+	position: relative;
+	/* clear: both; */
+	height: 100px;
+}
+
+#comp img {
+	position: absolute;
+	left: 210px;
+
+}
+
+
+
+</style>
+
+
+
+
+<script type="text/javascript">
+var num;//电脑出手
+var time=0;//局数
+var win=0;
+var tie=0;
+var lose=0;
+var res; 
+var player;
+var comps;
+
+function play(){
+	num = Math.floor(Math.random()*3);
+	var mypick = $("mc");
+    var board = $("board");
+	var myc = parseInt($("choice").value);
+	var pic = document.getElementById("myrock");
+	var result = $("result");
+	comp(num);
+   
+
+    if (myc==0) {
+
+    	pic.setAttribute("src","0.png");
+    	mypick.setAttribute("src","0.png");
+    	player = "Rock";
+    	// mypick.setAttribute("Rocks");
+
+    	switch(num){
+
+
+    		case 0:
+    		result.innerText= "Tie!";
+    		tie++;
+    		res="平"
+    		break;
+
+    		case 1:
+    		result.innerText= "You Lose!";
+    		lose++;
+    		res="负"
+    		break;
+
+
+    		case 2:
+    		result.innerText= "You Win!";
+    		win++;
+    		res="胜"
+    		break;
+
+
+    	}
+
+
+
+
+
+    }
+
+    else if (myc==1) {
+    	pic.setAttribute("src","1.png");
+    	mypick.setAttribute("src","1.png");
+    	player = "Paper";
+  
+
+    	switch(num){
+
+    		case 0:
+    		result.innerText= "You Win";
+    		win++;
+    		res="胜"
+    		break;
+
+    		case 1:
+    		result.innerText= "Tie!";
+    		tie++;
+    		res="平"
+    		break;
+
+
+    		case 2:
+    		result.innerText= "You Lose!";
+    		lose++;
+    		res="负"
+    		break;
+
+
+    	}
+    }
+    else{
+    	pic.setAttribute("src","2.png");
+    	mypick.setAttribute("src","2.png");
+    	player = "Scissor";
+    
+
+    	switch(num){
+
+    		case 0:
+    		result.innerText= "You Lose";
+    		lose++;
+    		res="负"
+    		break;
+
+    		case 1:
+    		result.innerText= "You Win!";
+    		win++;
+    		res="胜"
+    		break;
+
+
+    		case 2:
+    		result.innerText= "Tie!";
+    		tie++;
+    		res="平"
+    		break;
+
+
+    	}
+    }
+    time++;
+     $("board").innerText="场次:"+time+" "+"胜场:"+win+" "+"负场:"+lose+" "+"平局:"+tie;
+     showres(time,player,comps,res);
+}
+
+
+function comp(num){
+	
+	// alert(num);
+	var pcc = $("pcrock");
+	if (num==1) {
+		pcc.setAttribute("src", "1.png");
+		comps="Paper";
+	}
+	else if (num==2) {
+		pcc.setAttribute("src", "2.png");
+		comps="Scissor";
+	}
+	else{
+		pcc.setAttribute("src", "0.png");
+		comps="Rock";
+	}
+}
+
+function showres(time,player,comps,res){
+	var arr = new Array(time, player, comps, res)
+
+	console.log(arr);
+	var table=$("tres");
+	var tr = table.insertRow();
+	// var td1 = tr.insertCell(0);
+	// var td2 = tr.insertCell(1);
+	// var td3 = tr.insertCell(2);
+	// var td4 = tr.insertCell(3);
+
+	// td1.innerText=time;
+	// td2.innerText=player;
+	// td3.innerText=comps;
+	// td4.innerText=res;
+
+	for (var i = 0; i <arr.length; i++) {
+	  tr.insertCell(i).innerText=arr[i];
+	}
+
+
+
+
+}
+
+
+
+
+/*
+
+function changeImg() {
+    var obj = document.getElementById("bbb");   
+    if (obj.getAttribute("src") == "1.jpg") {
+        obj.setAttribute("src", "2.jpg");     
+    } else { 
+        obj.setAttribute("src", "1.jpg"); 
+    }
+     
+}*/
+
+
+
+function $(id){
+	return document.getElementById(id);
+}
+
+
+</script>
+
+
+</head>
+<body>
+ 
+
+ <div>
+	<table class="tables" border=1;>
+		<tr><td>你<br/>
+			<div id="player" border=1 style="width: 265 height:290">
+				<img id="myrock" src="0.png">
+
+			</div>
+		</td><td>VS</td>
+		<td>电脑<br/>
+            <div id="comp" border=1 style="width: 265 height:290">
+				<img id="pcrock" src="0.png">
+
+            </div>
+		</td></tr>
+		<tr><td colspan="3" id="result">显示结果</td></tr>
+		<tr><td>你选择了<br/>
+			<div id="mypic" border=1 style="width: 265 height:290">
+				<img id="mc" src="0.png">
+
+			</div>
+
+		</td><td>Choice</td><td>请选择出? 
+			<select id="choice">
+              <option selected value="0">Rock
+              <option value="1">Paper
+              <option value="2">Scissor
+            </select>
+            <br/>
+            <input style="width: 200px;" type="button" name="" value="Click me!!!" onclick=play()>
+            <br/>
+            <input style="width: 200px;"" type="button"  value="Try again" onclick=window.location.reload()>
+
+          </td></tr>
+		<tr><td colspan="3" id="board">result board</td></tr>
+	</table>
+
+	<table border="1" id="tres">
+		<tr><td>局数</td><td>你的选择</td><td>电脑的选择</td><td>结果</td></tr>
+	</table>
+
+</div>
+
+
+</body>
+</html>

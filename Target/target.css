@@ -1,0 +1,367 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-11-16 20:06:05
+ * @version $Id$
+ */
+*{
+	margin: 0;
+}
+/* Homepage */
+a{
+	text-decoration: none;
+}
+
+/* --------------------------------------header------------------------------------------------- */
+.header{
+	width: 1340px;
+}
+
+#logo{
+	float: left;
+	margin-left: 65px;
+	margin-right:20px;
+}
+
+.searchbar{
+	float: left;
+	margin-top: 20px;
+
+}
+
+.searchbar input{
+	height: 40px;
+	width: 850px;
+}
+
+.icon{
+	margin-top: 15px;
+	float: left;
+
+}
+
+.clean{
+	clear: both;
+}
+/* -----------------------------------------meun--------------------------------------------------- */
+.menu{
+	width: 1340px;
+	height: 50px;
+	position: relative;
+}
+
+
+.menu ul{
+	list-style: none;
+	font-size: 20px;
+	color: grey;
+	
+
+
+}
+
+
+.menu ul li{
+	/* width: 100px; */
+	display: inline-block;
+	padding: 10px 10px 10px;
+	
+	
+
+}
+
+.menu ul li:hover{
+
+
+	border-bottom: solid blue 2px;
+	
+
+}
+
+.menu ul li:first-child{
+	
+	margin-left: 165px;
+	/* border-bottom: red; */
+}
+
+
+.menu ul li a{
+text-decoration: none;
+color: #3D3935;
+font-weight: bold;
+}
+
+.line{
+	width: 100px;
+	height: 5px;
+	background-color: red;
+	position: absolute;
+	left: 210px;
+}
+
+/* -----------------------------------------图片区大1--------------------------------------------------- */
+
+.pics{
+	width: 1340px;
+	height: 420px;
+	margin-top: 10px;
+	z-index: 0;
+
+	
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+	position: relative;
+	
+}
+
+
+#chris-lab{
+	font-size: 40px;
+	color: black;
+	position: absolute;
+	left: 450px;
+	top: 250px;
+	font-weight: bold;
+
+}
+
+
+
+
+#tab1,#tab2,#tab3,#tab4{
+width: 265px;
+height: 55px;
+background-color: black;
+color: white;
+font-size: 20px;
+font-weight: bold;
+text-align: center;
+border-radius: 10px;
+position: absolute;
+border-color: white;
+border: solid 1px;
+	
+	line-height: 55px;
+}
+
+#tab1 {
+
+	left: 390px;
+	top: 320px;
+}
+
+#tab2 {
+	
+	left: 690px;
+	top: 320px;
+}
+
+#tab3 {
+
+	left: 370px;
+	top: 220px;
+}
+
+#tab4 {
+	
+	left: 670px;
+	top: 220px;
+}
+
+#tab1:hover,#tab2:hover,#tab3:hover,#tab4:hover{
+	
+	
+	border: solid 3px red;
+}
+/* ---------------------------------------------四格按键---------------------------------------------------------------- */
+
+.p-button{
+	margin-left: 100px;
+	margin-top: 10px;
+	width: 1210px;
+}
+
+.p-button a{
+ padding: 15px 110px;
+ font-size: 22px;
+ text-decoration: none;
+ color: black;
+}
+
+.p-button a:hover{
+  background-color: #CCCCCC;
+  color: white;
+}
+/* ----------------------------------------------展览图3合一行---------------------------------------------------- */
+.banner{
+	width: 1340px;
+	height: 750px;
+
+}
+
+.b-pics {
+ margin-top: 50px;
+ padding: 0px 110px;
+}
+
+.b-pics img{
+	width: 32%;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	
+	float: left;
+}
+/* --------------------------------------------------图片区大2------------------------------------------------------------- */
+.pics1{
+	width: 1340px;
+	height: 420px;
+	margin-top: 10px;
+
+	
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+	position: relative;
+	
+}
+
+#chris-lab1{
+	font-size: 40px;
+	color: black;
+	position: absolute;
+	left: 450px;
+	top: 150px;
+	font-weight: bold;
+}
+/* -----------------------------------------------展览区-4各一行----------------------------------------------------------------- */
+.c-pics {
+ margin-left: 40px;
+ margin-top: 50px;
+ padding: 0;
+ width: 1300px;
+}
+
+.c-pics img{
+	width: 24%;
+	margin-right: 10px;
+	
+	float: left;
+}
+
+.c1{
+	/* width: 1350px; */
+	height: 320px;
+}
+/* -------------------------------------------快递------------------------------------------------------ */
+.d1{
+	margin-top: 30px;
+	padding-left: 270px;
+
+	width: 1000px;
+	height: 100px;
+}
+
+.d-pics {
+margin-left: 10px;
+margin-top: 50px;
+padding: 0;
+}
+
+.d-pics img{
+	width: 18%;
+	margin-right: 10px;
+	
+	float: left;
+}
+/* -----------------------------------------------end---------------------------------------------------------------- */
+.endpic{
+	width: 1340px;
+	height: 200px;
+}
+.endpic img{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.end{
+	width: 1340px;
+	height: 380px;
+	background-color: #3d3935;
+	position: relative;
+	
+}
+
+
+.end ul{
+	list-style: none;
+	color: white;
+	float: left;
+	margin-top: 50px;
+}
+
+.end ul:first-child{
+		margin-left: 170px;
+}
+
+.end ul li{
+	margin-bottom: 5px;
+}
+
+.end ul li:hover{
+	text-decoration: underline;
+}
+
+.end img{
+	margin-top: 20px;
+}
+
+.endbox{
+	/* border: solid 1px whsite; */
+	position: absolute;
+	width: 500px;
+	top: 20px;
+	right: 20px;
+}
+
+.end a{
+	color: white;
+}
+
+h3{
+	color: silver;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+.detail{
+	display: none;
+	padding-left: 140px;
+	position: absolute;
+	background-color: white;
+	z-index: 1;
+}
+
+.detail ul{
+	float: left;
+	list-style: none;
+}
+
+.detail ul li{
+	width: 260px;
+	margin-top: 5px;
+	font-size: 18px;
+}
+
+.detail ul li:first-child{
+	border-bottom: solid 1px black;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.detail ul li a:hover{
+	color: red;
+}
+
+.cleanf{
+	clear: both;
+}
